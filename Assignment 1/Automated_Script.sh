@@ -207,8 +207,11 @@ sudo ip netns exec router-ns sysctl -w net.ipv4.ip_forward=1
 
 
 # Ping test function
-echo "----------ping test-------------"
+echo
+echo
+
 for ns in "${!namespaces_ip[@]}"; do
+echo "----------ping test from "$ns"-------------"
     # Extract IP and Gateway for the namespace
     IFS=',' read -r ip gateway <<< "${namespaces_ip[$ns]}"
     
@@ -233,7 +236,9 @@ for ns in "${!namespaces_ip[@]}"; do
                 # Execute ping from $ns to $target_ip_only
                 echo "Pinging from $ns ($ip_only) to $target_ns ($target_ip_only)"
                 sudo ip netns exec "$ns" ping -c 4 "$target_ip_only"
-                echo "-----------------------"
+				echo
+                echo "---------------------------------------------"
+				echo
             fi
         done
     fi
