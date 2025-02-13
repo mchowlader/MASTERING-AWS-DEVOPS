@@ -4,4 +4,5 @@
 Create a network simulation with two separate networks connected via a router using Linux network namespaces and bridges.
 
 ## Network Diagram Topology
-![Network Diagram](Network%20diagram.png)
+![Network Diagram](Assignment%201/Network%20diagram.png)
+
