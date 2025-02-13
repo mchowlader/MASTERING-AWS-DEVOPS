@@ -10,13 +10,14 @@ Create a network simulation with two separate networks connected via a router us
 ### Network Bridges
 - Bridge 0 (`br0`)
 - Bridge 1 (`br1`)
+
 ### Network Namespaces
 - Namespace 1 (`ns1`) - connected to `br0`
 - Namespace 2 (`ns2`) - connected to `br1`
 - Router namespace (`router-ns`) - connects both bridges
 
 #### 📌 Tasks  
-📌 **Please note that I am writing the documentation here using manual commands.**
+📌 **Please note that I am writing the documentation here using manual commands. If you want you can chekc my manual script [here](Assignment%201/Automated_Script.sh).**
 ##### **1. Create Network Bridges**
 Run the following commands:  
 ```
