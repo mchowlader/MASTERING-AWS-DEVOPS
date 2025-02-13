@@ -27,7 +27,7 @@ Run the following commands:
 ```
 sudo ip link add br0 type bridge
 sudo ip link set br0 up
-sudo Ip link add br1 type bridge
+sudo ip link add br1 type bridge
 sudo ip link set br1 up
 ```
 ##### **2. Create Network Namespaces**
@@ -103,12 +103,18 @@ sudo iptables --append FORWARD --in-interface br1 --jump ACCEPT
 sudo iptables --append FORWARD --out-interface br1 --jump ACCEPT
 ```
 
-## **5.Set Up Routing**  
 ###### **5.3 Establish default routes** 
 Run the following commands:  
 ```
 sudo ip netns exec ns0 ip route add default via 10.11.2.4
 sudo ip netns exec ns1 ip route add default via 10.11.3.5
+```
+
+## **6. Enable and Test Connectivity**  
+Run the following commands:  
+```
+sudo ip netns exec ns0 ping 10.11.3.7 -c 4
+sudo ip netns exec ns1 ping 10.11.2.6 -c 4
 ```
 
 ## Output of Linux Network Namespace Simulation
