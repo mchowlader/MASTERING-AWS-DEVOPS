@@ -4,7 +4,7 @@
 Create a network simulation with two separate networks connected via a router using Linux network namespaces and bridges.
 
 ## Network Diagram Topology
-![Network Diagram](Assignment-1/Network-diagram.png)
+![Network Diagram](Assignment%201/Network%20diagram.png)
 
 ## Required Components
 
@@ -18,4 +18,4 @@ Create a network simulation with two separate networks connected via a router us
 - Router namespace (`router-ns`) - connects both bridges
 
 ## Output of Linux Network Namespace Simulation
-![Network Simulation Output](Assignment-1/Linux-Namespace-Simulation-Output.png)
+![Network Diagram](Assignment%201/Linux%Namespace%Simulation%Output.png)
