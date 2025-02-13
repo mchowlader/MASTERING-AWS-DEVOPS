@@ -3,10 +3,11 @@
 ## Main Objective:
 Create a network simulation with two separate networks connected via a router using Linux network namespaces and bridges.
 
-## Network Diagram Topology
+## Network Diagram Topology:
 ![Network Diagram](Assignment%201/Network%20diagram.png)
 
-## Required Components
+## Required Components:
+
 ### Network Bridges
 - Bridge 0 (`br0`)
 - Bridge 1 (`br1`)
@@ -125,7 +126,7 @@ If everything is set up correctly, all pings should be successful, indicating fu
 ## Output of Automated Script Linux Network Namespace Simulation. Automated Script [here](Assignment%201/Automated_Script.sh).
 ![Network Simulation Output](Assignment%201/Linux%20Namespace%20Simulation%20Output.png)
 
-## Conclusion::
+## Conclusion:
 This documentation outlines the process of setting up a simulated network environment using Linux network namespaces, 
 bridges, and virtual Ethernet pairs. By following these steps, we established communication between separate network namespaces via a router. 
 The manual setup ensures a fundamental understanding of networking concepts, while the automated script provides a more efficient deployment. 
