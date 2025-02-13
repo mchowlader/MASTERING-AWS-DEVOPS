@@ -243,3 +243,13 @@ echo "----------ping test from "$ns"-------------"
         done
     fi
 done
+
+echo
+#Clean exiting resources
+echo "Do you want to clean existing resources? (yes/y)"
+read is_resources_delete
+if [[ "${is_resources_delete^^}" == "YES" || "${is_resources_delete^^}" == "Y" ]]; then
+	cleanup
+else
+	echo "Thank you!"
+fi
