@@ -21,11 +21,11 @@ Create a network simulation with two separate networks connected via a router us
 #### 📌 Tasks  
 ##### **1. Create Network Bridges**
 Run the following commands:  
-```bash
+```
 sudo ip netns add ns0
 sudo ip netns add ns1
 sudo ip netns add router-ns
-```bash
+```
 
 
 
