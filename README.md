@@ -120,5 +120,5 @@ sudo ip netns exec ns1 ping 10.11.2.6 -c 4
 ## Output of Manual Ping 
 ![Manual Ping Output](Assignment%201/Manual%20ping%20output.png)
 
-## Output of Automated Script Linux Network Namespace Simulation
+## Output of Automated Script Linux Network Namespace Simulation. Automated Script [here](Assignment%201/Automated_Script.sh).
 ![Network Simulation Output](Assignment%201/Linux%20Namespace%20Simulation%20Output.png)
