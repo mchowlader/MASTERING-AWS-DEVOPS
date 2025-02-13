@@ -17,7 +17,7 @@ Create a network simulation with two separate networks connected via a router us
 - Router namespace (`router-ns`) - connects both bridges
 
 📌📌 **Please note that I am writing this documentation using manual commands. 
-If you want, you can check my manual script [here](Assignment%201/Automated_Script.sh).**
+If you want, you can check my automated script [here](Assignment%201/Automated_Script.sh).**
 
 
 #### ✅ Tasks  
