@@ -18,4 +18,4 @@ Create a network simulation with two separate networks connected via a router us
 - Router namespace (`router-ns`) - connects both bridges
 
 ## Output of Linux Network Namespace Simulation
-![Network Simulation Output](Assignment%201/Linux%Namespace%Simulation%Output.png)
+![Network Simulation Output](Assignment%201/Linux%20Namespace%20Simulation%20Output.png)
