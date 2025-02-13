@@ -25,21 +25,7 @@ Run the following commands:
 sudo ip netns add ns0
 sudo ip netns add ns1
 sudo ip netns add router-ns
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```bash
 
 
 
