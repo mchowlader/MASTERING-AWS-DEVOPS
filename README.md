@@ -116,9 +116,18 @@ Run the following commands:
 sudo ip netns exec ns0 ping 10.11.3.7 -c 4
 sudo ip netns exec ns1 ping 10.11.2.6 -c 4
 ```
+## Expected Output:
+If everything is set up correctly, all pings should be successful, indicating full connectivity between ns0, ns1, and router-ns.
 
 ## Output of Manual Ping 
 ![Manual Ping Output](Assignment%201/Manual%20ping%20output.png)
 
 ## Output of Automated Script Linux Network Namespace Simulation. Automated Script [here](Assignment%201/Automated_Script.sh).
 ![Network Simulation Output](Assignment%201/Linux%20Namespace%20Simulation%20Output.png)
+
+## Conclusion::
+This documentation outlines the process of setting up a simulated network environment using Linux network namespaces, 
+bridges, and virtual Ethernet pairs. By following these steps, we established communication between separate network namespaces via a router. 
+The manual setup ensures a fundamental understanding of networking concepts, while the automated script provides a more efficient deployment. 
+The successful connectivity tests confirm the correct configuration of the network. 
+This simulation serves as a practical example for understanding namespace-based networking in Linux environments.
