@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sudo chmod +x ./script/GetServerIP.sh
-sudo chmod +x ./script/check-mysql.sh.sh
-sudo chmod +x ./script/create-databse-and-user.sh
+sudo chmod +x script/GetServerIP.sh
+sudo chmod +x script/check-mysql.sh.sh
+sudo chmod +x script/create-databse-and-user.sh
 
 sudo mkdir -p db
 sudo mkdir -p nodejs
