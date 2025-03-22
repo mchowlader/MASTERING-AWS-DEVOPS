@@ -1,14 +1,8 @@
 #!/bin/bash
 
-sudo chmod +x script/GetServerIP.sh
-sudo chmod +x script/check-mysql.sh.sh
-sudo chmod +x script/create-databse-and-user.sh
-
-sudo mkdir -p db
-sudo mkdir -p nodejs
-
-mv ./script/check-mysql.sh ./db
-mv ./script/create-databse-and-user.sh ./db
+sudo chmod +x db/GetServerIP.sh
+sudo chmod +x db/check-mysql.sh.sh
+sudo chmod +x db/create-databse-and-user.sh
 
 #Install MySQL
 sudo apt-get update
