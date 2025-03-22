@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sudo chmod +x db/GetServerIP.sh
-sudo chmod +x db/check-mysql.sh.sh
-sudo chmod +x db/create-databse-and-user.sh
+chmod +x script/GetServerIP.sh
+chmod +x db/check-mysql.sh
+chmod +x db/create-databse-and-user.sh
 
 #Install MySQL
 sudo apt-get update
@@ -12,7 +12,7 @@ sudo apt-get install mysql-server -y
 #Updating MySQL bind-address to: $SERVER_IP
 bash "$script/UpdateMySQLSystemdIP.sh"
 
-mv mysql-check.service  /etc/systemd/system/mysql-check.service
+sudo mv db/mysql-check.service  /etc/systemd/system/mysql-check.service
 
 sudo systemctl daemon-reload
 sudo systemctl start mysql-check
