@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=oneshot
 EnvironmentFile=/etc/environment
-ExecStart=/root/code/db/check-mysql.sh
+ExecStart=/MASTERING-AWS-DEVOPS/db/check-mysql.sh
 RemainAfterExit=yes
 
 [Install]
