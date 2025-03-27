@@ -47,4 +47,12 @@ echo "[INFO] Starting mysql-check service..."
 sudo systemctl start mysql 
 sudo systemctl enable mysql
 
+
+# Then, update MySQL bind-address
+echo "[INFO] Creating Databases and Users.."
+success=($SCRIPT_DIR/db/create-databse-and-user.sh") || {
+    echo "[ERROR] Failed to create-databse-and-user..."
+    exit 1
+}
+
 echo "[INFO] Script execution completed successfully."
