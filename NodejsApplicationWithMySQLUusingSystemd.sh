@@ -24,20 +24,6 @@
 
 
 
-
-
-set -e  # Exit script on any error
-set -o pipefail  # Catch errors in piped commands
-
-LOG_FILE="install.log"
-exec > >(tee -a "$LOG_FILE") 2>&1  # Log output to file
-
-echo "[INFO] Granting execute permissions to required scripts..."
-sudo chmod +x script/GetServerIP.sh
-sudo chmod +x nodejs/check-mysql.sh
-sudo chmod +x db/create-databse-and-user.sh
-sudo chmod +x script/UpdateMySQLSystemdIP.sh
-
 # First, retrieve the server IP
 echo "[INFO] Retrieving server IP..."
 SERVER_IP=$(./script/GetServerIP.sh) || {
@@ -46,15 +32,13 @@ SERVER_IP=$(./script/GetServerIP.sh) || {
 }
 echo "[INFO] Server IP: $SERVER_IP"
 
-
-
 # Then, update MySQL bind-address
 echo "[INFO] Updating MySQL bind-address to: $SERVER_IP"
-Succss = $(./script/UpdateMySQLSystemdIP.sh) "$SERVER_IP" || {
+Success=$(./script/UpdateMySQLSystemdIP.sh "$SERVER_IP") || {  # Fixed spacing issue
     echo "[ERROR] Failed to update MySQL bind-address. Exiting..."
     exit 1
-echo $Succss
 }
+echo "$Success"
 
 echo "[INFO] Creating script directory if not exists..."
 sudo mkdir -p /usr/local/bin
