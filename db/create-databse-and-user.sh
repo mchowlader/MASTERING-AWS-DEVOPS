@@ -15,7 +15,7 @@ FLUSH PRIVILEGES;
 
 echo "Database and user setup complete."
 
-USE '$DB_NAME';
+USE practice_app;
 
 # Insert data into table after database creation
 sudo mysql -D $DB_NAME -e "
