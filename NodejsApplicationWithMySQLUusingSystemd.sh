@@ -38,19 +38,15 @@ sudo chmod +x nodejs/check-mysql.sh
 sudo chmod +x db/create-databse-and-user.sh
 sudo chmod +x script/UpdateMySQLSystemdIP.sh
 
-echo "[INFO] Retrieving server IP..."
-SERVER_IP= sudo script/GetServerIP.sh || {
-    echo "[ERROR] Failed to retrieve server IP. Exiting..."
-    exit 1
-}
-echo "[INFO] Server IP: $SERVER_IP"
-
 # First, retrieve the server IP
 echo "[INFO] Retrieving server IP..."
 SERVER_IP=$(./script/GetServerIP.sh) || {
     echo "[ERROR] Failed to retrieve server IP. Exiting..."
     exit 1
 }
+echo "[INFO] Server IP: $SERVER_IP"
+
+
 
 # Then, update MySQL bind-address
 echo "[INFO] Updating MySQL bind-address to: $SERVER_IP"
