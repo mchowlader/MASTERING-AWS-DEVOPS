@@ -13,6 +13,10 @@ sudo apt-get install mysql-server -y
 #Updating MySQL bind-address to: $SERVER_IP
 bash "$script/UpdateMySQLSystemdIP.sh"
 
+# Create script directory
+mkdir -p /usr/local/bin
+sudo mv nodejs/check-mysql.sh  /usr/local/bin/check-mysql.sh
+
 sudo mv db/mysql-check.service  /etc/systemd/system/mysql-check.service
 
 sudo systemctl daemon-reload
