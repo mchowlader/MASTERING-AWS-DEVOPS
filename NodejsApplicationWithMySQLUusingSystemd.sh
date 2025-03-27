@@ -39,7 +39,7 @@ sudo chmod +x db/create-databse-and-user.sh
 sudo chmod +x script/UpdateMySQLSystemdIP.sh
 
 echo "[INFO] Retrieving server IP..."
-SERVER_IP=$(./script/GetServerIP.sh) || {
+SERVER_IP= sudo script/GetServerIP.sh || {
     echo "[ERROR] Failed to retrieve server IP. Exiting..."
     exit 1
 }
