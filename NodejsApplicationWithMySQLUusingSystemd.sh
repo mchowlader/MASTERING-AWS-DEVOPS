@@ -50,7 +50,7 @@ sudo systemctl enable mysql
 
 # Then, update MySQL bind-address
 echo "[INFO] Creating Databases and Users.."
-success=($SCRIPT_DIR/db/create-databse-and-user.sh") || {
+success2=($SCRIPT_DIR/db/create-databse-and-user.sh) || {
     echo "[ERROR] Failed to create-databse-and-user..."
     exit 1
 }
