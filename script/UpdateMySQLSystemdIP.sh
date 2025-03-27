@@ -6,7 +6,7 @@ SCRIPT_DIR=$(pwd)
 SERVER_IP=$($SCRIPT_DIR/GetServerIP.sh)
 echo "SERVER_IP: $SERVER_IP"  # Debugging line
 CONFIG_FILE="/etc/mysql/mysql.conf.d/mysqld.cnf"
-MYSQL_SERVICE=$(/usr/local/bin/check-mysql.sh)
+MYSQL_SERVICE=/usr/local/bin/check-mysql.sh
 echo "MYSQL_SERVICE: $MYSQL_SERVICE"  # Debugging line
 
 echo "Updating MySQL bind-address to : $SERVER_IP"
@@ -25,3 +25,4 @@ if [ "$MYSQL_STATUS" == "active" ]; then
 else
     echo "Update failed! MySQL is not running."
 fi
+~

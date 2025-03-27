@@ -1,28 +1,5 @@
 #!/bin/bash
 
-#sudo chmod +x script/GetServerIP.sh
-#sudo chmod +x nodejs/check-mysql.sh
-#sudo chmod +x db/create-databse-and-user.sh
-#sudo chmod +x script/UpdateMySQLSystemdIP.sh
-
-#Install MySQL
-#sudo apt-get update
-#sudo apt-get install mysql-server -y
-
-#Configure MySQL to allow remote connections
-#Updating MySQL bind-address to: $SERVER_IP
-#sudo ./script/UpdateMySQLSystemdIP.sh
-
-# Create script directory
-#mkdir -p /usr/local/bin
-#sudo mv nodejs/check-mysql.sh  /usr/local/bin/check-mysql.sh
-#
-#sudo mv db/mysql-check.service  /etc/systemd/system/mysql-check.service
-#
-#sudo systemctl daemon-reload
-#sudo systemctl start mysql-check
-
-
 
 set -e  # Exit script on any error
 set -o pipefail  # Catch errors in piped commands
@@ -41,7 +18,7 @@ SCRIPT_DIR=$(pwd)
 
 # First, retrieve the server IP
 echo "[INFO] Retrieving server IP..."
-SERVER_IP=$($SCRIPT_DIR/script/GetServerIP.sh) || {
+SERVER_IP=($SCRIPT_DIR/script/GetServerIP.sh) || {
     echo "[ERROR] Failed to retrieve server IP. Exiting..."
     exit 1
 }
@@ -49,7 +26,7 @@ echo "[INFO] Server IP: $SERVER_IP"
 echo "$SCRIPT_DIR"
 # Then, update MySQL bind-address
 echo "[INFO] Updating MySQL bind-address to: $SERVER_IP"
-Success=$($SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh "$SERVER_IP") || {
+Success=($SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh "$SERVER_IP") || {
     echo "[ERROR] Failed to update MySQL bind-address. Exiting..."
     exit 1
 }
