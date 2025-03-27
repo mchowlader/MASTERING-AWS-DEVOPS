@@ -45,6 +45,14 @@ SERVER_IP=$(./script/GetServerIP.sh) || {
 }
 echo "[INFO] Server IP: $SERVER_IP"
 
+# First, retrieve the server IP
+echo "[INFO] Retrieving server IP..."
+SERVER_IP=$(./script/GetServerIP.sh) || {
+    echo "[ERROR] Failed to retrieve server IP. Exiting..."
+    exit 1
+}
+
+# Then, update MySQL bind-address
 echo "[INFO] Updating MySQL bind-address to: $SERVER_IP"
 sudo ./script/UpdateMySQLSystemdIP.sh "$SERVER_IP" || {
     echo "[ERROR] Failed to update MySQL bind-address. Exiting..."
