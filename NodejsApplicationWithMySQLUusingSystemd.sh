@@ -44,7 +44,7 @@ sudo mv -f db/mysql-check.service /etc/systemd/system/mysql-check.service
 sudo systemctl daemon-reload
 
 echo "[INFO] Starting mysql-check service..."
-sudo systemctl start mysql-check 
-sudo systemctl enable mysql-check
+sudo systemctl start mysql 
+sudo systemctl enable mysql
 
 echo "[INFO] Script execution completed successfully."
