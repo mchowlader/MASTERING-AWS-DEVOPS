@@ -6,8 +6,8 @@ chmod +x db/create-databse-and-user.sh
 chmod +x script/UpdateMySQLSystemdIP.sh
 
 #Install MySQL
-sudo apt-get update
-sudo apt-get install mysql-server -y
+#sudo apt-get update
+#sudo apt-get install mysql-server -y
 
 #Configure MySQL to allow remote connections
 #Updating MySQL bind-address to: $SERVER_IP
