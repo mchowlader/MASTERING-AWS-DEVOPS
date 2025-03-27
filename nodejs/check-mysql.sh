@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DB_HOST=$(bash ../script/GetServerIP.sh)
+DB_HOST=$(./script/GetServerIP.sh)
 #DB_HOST="192.168.150.131"
 DB_PORT=3306
 MAX_RETRIES=30
