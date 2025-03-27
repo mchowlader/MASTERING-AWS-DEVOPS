@@ -1,8 +1,9 @@
 #!/bin/bash
 
-SERVER_IP=$(bash ./GetServerIP.sh)
+#SERVER_IP=./GetServerIP.sh
+SERVER_IP=$(./GetServerIP.sh)
 CONFIG_FILE="/etc/mysql/mysql.conf.d/mysqld.cnf"
-MYSQL_SERVICE="/MASTERING-AWS-DEVOPS/nodejs/check-mysql.sh"
+MYSQL_SERVICE=$(/usr/local/bin/check-mysql.sh)
 
 echo "Updating MySQL bind-address to : $SERVER_IP"
 
