@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #SERVER_IP=./GetServerIP.sh
+echo ""Hello"
 SERVER_IP=$(./script/GetServerIP.sh)
 CONFIG_FILE="/etc/mysql/mysql.conf.d/mysqld.cnf"
 MYSQL_SERVICE=$(/usr/local/bin/check-mysql.sh)

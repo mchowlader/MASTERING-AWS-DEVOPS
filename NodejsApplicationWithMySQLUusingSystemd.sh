@@ -24,8 +24,6 @@
 
 
 
-
-
 set -e  # Exit script on any error
 set -o pipefail  # Catch errors in piped commands
 
@@ -38,23 +36,22 @@ sudo chmod +x nodejs/check-mysql.sh
 sudo chmod +x db/create-databse-and-user.sh
 sudo chmod +x script/UpdateMySQLSystemdIP.sh
 
-echo "[INFO] Retrieving server IP..."
+# Get the current working directory dynamically
+SCRIPT_DIR=$(pwd)
+
 # First, retrieve the server IP
 echo "[INFO] Retrieving server IP..."
-SERVER_IP=$(./script/GetServerIP.sh) || {
+SERVER_IP=$($SCRIPT_DIR/script/GetServerIP.sh) || {
     echo "[ERROR] Failed to retrieve server IP. Exiting..."
     exit 1
 }
 echo "[INFO] Server IP: $SERVER_IP"
 
-
-
 # Then, update MySQL bind-address
 echo "[INFO] Updating MySQL bind-address to: $SERVER_IP"
-Succss = $(./script/UpdateMySQLSystemdIP.sh) "$SERVER_IP" || {
+Success=$($SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh "$SERVER_IP") || {
     echo "[ERROR] Failed to update MySQL bind-address. Exiting..."
     exit 1
-echo $Succss
 }
 
 echo "[INFO] Creating script directory if not exists..."
