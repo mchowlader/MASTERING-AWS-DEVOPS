@@ -11,7 +11,7 @@ sudo apt-get install mysql-server -y
 
 #Configure MySQL to allow remote connections
 #Updating MySQL bind-address to: $SERVER_IP
-bash "$script/UpdateMySQLSystemdIP.sh"
+sudo ./script/UpdateMySQLSystemdIP.sh
 
 # Create script directory
 mkdir -p /usr/local/bin
