@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+#STEP-1:
 set -e  # Exit script on any error
 set -o pipefail  # Catch errors in piped commands
 
@@ -12,6 +12,8 @@ sudo chmod +x script/GetServerIP.sh
 sudo chmod +x nodejs/check-mysql.sh
 sudo chmod +x db/create-databse-and-user.sh
 sudo chmod +x script/UpdateMySQLSystemdIP.sh
+
+#STEP-2:
 
 # Get the current working directory dynamically
 SCRIPT_DIR=$(pwd)
@@ -26,7 +28,7 @@ echo "[INFO] Server IP: $SERVER_IP"
 echo "$SCRIPT_DIR"
 # Then, update MySQL bind-address
 echo "[INFO] Updating MySQL bind-address to: $SERVER_IP"
-Success=($SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh "$SERVER_IP") || {
+($SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh "$SERVER_IP") || {
     echo "[ERROR] Failed to update MySQL bind-address. Exiting..."
     exit 1
 }
@@ -40,6 +42,10 @@ sudo mv -f nodejs/check-mysql.sh /usr/local/bin/check-mysql.sh
 echo "[INFO] Moving MySQL systemd service file to /etc/systemd/system/..."
 sudo mv -f db/mysql-check.service /etc/systemd/system/mysql-check.service
 
+#STEP-3:
+#sudo apt-get update
+#sudo apt-get install mysql-server
+
 # Reload systemd to recognize the new service
 sudo systemctl daemon-reload
 
@@ -50,9 +56,11 @@ sudo systemctl enable mysql
 
 # Then, update MySQL bind-address
 echo "[INFO] Creating Databases and Users.."
-success2=($SCRIPT_DIR/db/create-databse-and-user.sh) || {
+($SCRIPT_DIR/db/create-databse-and-user.sh) || {
     echo "[ERROR] Failed to create-databse-and-user..."
     exit 1
 }
+
+#STEP-4:
 
 echo "[INFO] Script execution completed successfully."
