@@ -25,4 +25,3 @@ if [ "$MYSQL_STATUS" == "active" ]; then
 else
     echo "Update failed! MySQL is not running."
 fi
-~
