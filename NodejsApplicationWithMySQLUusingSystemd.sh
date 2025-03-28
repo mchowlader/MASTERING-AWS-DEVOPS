@@ -45,7 +45,7 @@ sudo mv -f db/mysql-check.service /etc/systemd/system/mysql-check.service
 #STEP-3:
 sudo apt-get update
 sleep 5
-sudo apt-get install mysql-server --y
+sudo apt-get install -y mysql-server
 
 # Reload systemd to recognize the new service
 sudo systemctl daemon-reload
