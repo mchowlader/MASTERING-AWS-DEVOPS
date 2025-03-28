@@ -88,6 +88,11 @@ sudo chown -R nodejs:nodejs /opt/app
 echo "[INFO] Moving Node.js systemd service file to /etc/systemd/system/..."
 sudo mv -f ./nodejs/nodejs-app.service /etc/systemd/system/nodejs-app.service
 
+
+sudo mv -f ./script/server.js /opt/app/server.js
+echo "Updating nodejs server ip addr..."
+sed -i "s|^const SERVER_IP = .*;|const SERVER_IP = \"$SERVER_IP\";|" /opt/app/server.js
+
 sudo systemctl start nodejs-app
 sudo systemctl enable nodejs-app
 sudo systemctl status nodejs-app
