@@ -95,7 +95,7 @@ sudo chown -R nodejs:nodejs /opt/app
 # Move Node.js service file and update server.js
 #sudo mv -f ./nodejs/nodejs-app.service /etc/systemd/system/nodejs-app.service
 sudo mv -f "$SCRIPT_DIR/nodejs/nodejs-app.service" /etc/systemd/system/nodejs-app.service
-sudo mv -f ./script/server.js /opt/app/server.js
+sudo mv -f  "$SCRIPT_DIR/script/server.js" /opt/app/server.js
 
 # Update Node.js server IP in server.js
 sed -i "s|^const SERVER_IP = .*;|const SERVER_IP = \"$SERVER_IP\";|" /opt/app/server.js
