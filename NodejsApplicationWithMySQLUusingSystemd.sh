@@ -7,6 +7,20 @@ set -o pipefail  # Catch errors in piped commands
 LOG_FILE="install.log"
 exec > >(tee -a "$LOG_FILE") 2>&1  # Log output to file
 
+#STEP-1:
+sudo apt-get update
+sleep 5
+sudo apt-get install -y mysql-server
+
+# Reload systemd to recognize the new service
+sudo systemctl daemon-reload
+
+echo "[INFO] Starting mysql-check service..."
+sudo systemctl start mysql 
+sleep 5;
+
+sudo systemctl enable mysql
+
 echo "[INFO] Granting execute permissions to required scripts..."
 sudo chmod +x script/GetServerIP.sh
 sudo chmod +x nodejs/check-mysql.sh
@@ -42,19 +56,6 @@ sudo mv -f nodejs/check-mysql.sh /usr/local/bin/check-mysql.sh
 echo "[INFO] Moving MySQL systemd service file to /etc/systemd/system/..."
 sudo mv -f db/mysql-check.service /etc/systemd/system/mysql-check.service
 
-#STEP-3:
-sudo apt-get update
-sleep 5
-sudo apt-get install -y mysql-server
-
-# Reload systemd to recognize the new service
-sudo systemctl daemon-reload
-
-echo "[INFO] Starting mysql-check service..."
-sudo systemctl start mysql 
-sleep 5;
-
-sudo systemctl enable mysql
 
 
 # Then, update MySQL bind-address
