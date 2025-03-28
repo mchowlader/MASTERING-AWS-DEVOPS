@@ -20,7 +20,7 @@ SCRIPT_DIR=$(pwd)
 
 # First, retrieve the server IP
 echo "[INFO] Retrieving server IP..."
-SERVER_IP=($SCRIPT_DIR/script/GetServerIP.sh) || {
+SERVER_IP=$("$SCRIPT_DIR/script/GetServerIP.sh") || {
     echo "[ERROR] Failed to retrieve server IP. Exiting..."
     exit 1
 }
@@ -28,7 +28,7 @@ echo "[INFO] Server IP: $SERVER_IP"
 echo "$SCRIPT_DIR"
 # Then, update MySQL bind-address
 echo "[INFO] Updating MySQL bind-address to: $SERVER_IP"
-Success=($SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh) || {
+Success=$("$SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh") || {
     echo "[ERROR] Failed to update MySQL bind-address. Exiting..."
     exit 1
 }
@@ -59,7 +59,7 @@ sudo systemctl enable mysql
 
 # Then, update MySQL bind-address
 echo "[INFO] Creating Databases and Users.."
-success2=($SCRIPT_DIR/db/create-databse-and-user.sh) || {
+success2=$("$SCRIPT_DIR/db/create-databse-and-user.sh") || {
     echo "[ERROR] Failed to create-databse-and-user..."
     exit 1
 }
