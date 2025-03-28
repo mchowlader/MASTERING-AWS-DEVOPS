@@ -7,8 +7,7 @@ Requires=mysql.service
 Type=simple
 User=nodejs
 WorkingDirectory=/opt/app
-Environment=PATH=/usr/local/nvm/versions/node/$(nvm version)/bin:$PATH
-ExecStart=/usr/local/nvm/versions/node/$(nvm version)/bin/node /opt/app/server.js
+ExecStart=/usr/bin/node /opt/app/server.js
 Restart=always
 RestartSec=10
 StandardOutput=journal+console

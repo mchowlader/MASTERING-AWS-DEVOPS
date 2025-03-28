@@ -5,14 +5,14 @@ const app = express();
 const PORT = 3000; // Change port if needed
 
 // Set the IP address manually
-const SERVER_IP = "10.62.18.38"; // Replace with your actual IP address
+const SERVER_IP = "192.168.150.131"; // Replace with your actual IP address
 
 // MySQL Configuration
 const db = mysql.createPool({
   connectionLimit: 10,
   host: SERVER_IP,
   user: "app_user",
-  password: "your_secure_password",  // Set your MySQL root password here
+  password: "app_user",  // Set your MySQL root password here
   database: "practice_app",
   port: 3306
 });
