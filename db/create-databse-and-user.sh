@@ -6,6 +6,7 @@ DB_PASS="app_user"
 
 echo "Creating MySQL database and user..."
 
+# Run all MySQL commands in one block
 sudo mysql -e "
 CREATE DATABASE IF NOT EXISTS $DB_NAME;
 CREATE USER IF NOT EXISTS '$DB_USER'@'%' IDENTIFIED BY '$DB_PASS';
@@ -15,10 +16,8 @@ FLUSH PRIVILEGES;
 
 echo "Database and user setup complete."
 
-USE practice_app;
-
-# Insert data into table after database creation
-sudo mysql -D $DB_NAME -e "
+# Create table and insert data (no need for USE separately)
+sudo mysql $DB_NAME -e "
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,

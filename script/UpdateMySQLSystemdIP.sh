@@ -3,7 +3,8 @@
 echo "Hello"
 # Get the current working directory dynamically
 SCRIPT_DIR=$(pwd)
-SERVER_IP=$("$SCRIPT_DIR/script/GetServerIP.sh")
+SERVER_IP=$("$SCRIPT_DIR/script/GetServerIP.sh") || echo "Error getting server IP"
+
 echo "SERVER_IP: $SERVER_IP"  # Debugging line
 CONFIG_FILE="/etc/mysql/mysql.conf.d/mysqld.cnf"
 MYSQL_SERVICE=/usr/local/bin/check-mysql.sh
