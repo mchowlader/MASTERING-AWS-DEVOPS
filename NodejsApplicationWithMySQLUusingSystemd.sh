@@ -68,7 +68,12 @@ success2=$("$SCRIPT_DIR/db/create-databse-and-user.sh") || {
 #STEP-4:
 echo "Directory creating..."
 sudo mkdir -p /opt/app
-sudo useradd -r -s /bin/false nodejs
+
+# Check if the user 'nodejs' already exists
+if ! id -u nodejs > /dev/null 2>&1; then
+    sudo useradd -r -s /bin/false nodejs
+fi
+
 sudo chown nodejs:nodejs /opt/app
 
 cd /opt/app
@@ -79,10 +84,9 @@ sudo npm init -y
 sudo npm install express mysql2
 sudo chown -R nodejs:nodejs /opt/app
 
-
 #STEP-5:
 echo "[INFO] Moving Node.js systemd service file to /etc/systemd/system/..."
-sudo mv -f /nodejs/nodejs-app.service /etc/systemd/system/nodejs-app.service
+sudo mv -f ./nodejs/nodejs-app.service /etc/systemd/system/nodejs-app.service
 
 sudo systemctl start nodejs-app
 sudo systemctl enable nodejs-app
