@@ -43,8 +43,9 @@ echo "[INFO] Moving MySQL systemd service file to /etc/systemd/system/..."
 sudo mv -f db/mysql-check.service /etc/systemd/system/mysql-check.service
 
 #STEP-3:
-#sudo apt-get update
-#sudo apt-get install mysql-server
+sudo apt-get update
+sleep 5
+sudo apt-get install mysql-server
 
 # Reload systemd to recognize the new service
 sudo systemctl daemon-reload
