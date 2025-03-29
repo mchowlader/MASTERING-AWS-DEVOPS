@@ -44,7 +44,7 @@ echo "[INFO] Server IP: $SERVER_IP"
 
 # Update MySQL bind-address
 echo "[INFO] Updating MySQL bind-address to: $SERVER_IP"
-S$("$SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh") || {
+$("$SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh") || {
     echo "[ERROR] Failed to update MySQL bind-address. Exiting..."
     exit 1
 }
