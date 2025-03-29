@@ -92,8 +92,7 @@ fi
 
 sudo chown -R nodejs:nodejs /opt/app
 
-# Move Node.js service file and update server.js
-#sudo mv -f ./nodejs/nodejs-app.service /etc/systemd/system/nodejs-app.service
+echo "Move Node.js service file and update server.js"
 sudo mv -f "$SCRIPT_DIR/nodejs/nodejs-app.service" /etc/systemd/system/nodejs-app.service
 sudo mv -f  "$SCRIPT_DIR/script/server.js" /opt/app/server.js
 
@@ -101,7 +100,7 @@ sudo mv -f  "$SCRIPT_DIR/script/server.js" /opt/app/server.js
 sed -i "s|^const SERVER_IP = .*;|const SERVER_IP = \"$SERVER_IP\";|" /opt/app/server.js
 
 
-# Start and enable Node.js service
+echo "Start and enable Node.js service"
 if ! systemctl is-active --quiet nodejs-app; then
     echo "[INFO] Starting Node.js service..."
     sudo systemctl start nodejs-app
