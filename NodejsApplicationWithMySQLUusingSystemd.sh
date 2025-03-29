@@ -84,17 +84,8 @@ fi
 # Check if npm packages are installed
 if [ ! -d "node_modules" ]; then
     echo "[INFO] Initializing npm project..."
-    
-    # Ensure npm runs correctly by specifying the full path
-    export NPM_CMD=$(which npm)
-
-    if [ -z "$NPM_CMD" ]; then
-        echo "[ERROR] npm is not found in the system PATH"
-        exit 1
-    fi
-
-    $NPM_CMD init -y
-    sudo $NPM_CMD install express mysql2
+    sudo -E npm init -y  # Use sudo -E to preserve the environment
+    sudo -E npm install express mysql2
 else
     echo "[INFO] npm packages already installed. Skipping installation."
 fi
