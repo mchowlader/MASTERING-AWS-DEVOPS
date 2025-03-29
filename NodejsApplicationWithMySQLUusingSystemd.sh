@@ -29,7 +29,7 @@ fi
 sudo systemctl enable mysql
 
 # Grant execute permissions to required scripts
-chmod +x script/GetServerIP.sh script/UpdateMySQLSystemdIP.sh nodejs/check-mysql.sh db/create-databse-and-user.sh
+chmod +x script/GetServerIP.sh script/UpdateMySQLSystemdIP.sh script/server.js nodejs/check-mysql.sh db/create-databse-and-user.sh
 
 # Get the current working directory dynamically
 SCRIPT_DIR=$(pwd)
