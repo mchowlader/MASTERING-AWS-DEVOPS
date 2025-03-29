@@ -44,7 +44,7 @@ echo "[INFO] Server IP: $SERVER_IP"
 
 # Update MySQL bind-address
 echo "[INFO] Updating MySQL bind-address to: $SERVER_IP"
-Success=$("$SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh") || {
+S$("$SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh") || {
     echo "[ERROR] Failed to update MySQL bind-address. Exiting..."
     exit 1
 }
@@ -56,7 +56,7 @@ sudo mv -f db/mysql-check.service /etc/systemd/system/mysql-check.service
 
 # Create databases and users
 echo "[INFO] Creating databases and users..."
-success2=$("$SCRIPT_DIR/db/create-databse-and-user.sh") || {
+$("$SCRIPT_DIR/db/create-databse-and-user.sh") || {
     echo "[ERROR] Failed to create database and user. Exiting..."
     exit 1
 }
