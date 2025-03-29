@@ -84,8 +84,8 @@ fi
 # Check if npm packages are installed
 if [ ! -d "node_modules" ]; then
     echo "[INFO] Initializing npm project..."
-    sudo -E $(which npm) init -y  # Use sudo -E to preserve the environment
-    sudo -E $(which npm) install express mysql2
+    npm init -y  # Use sudo -E to preserve the environment
+    sudo npm install express mysql2
 else
     echo "[INFO] npm packages already installed. Skipping installation."
 fi
