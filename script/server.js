@@ -24,7 +24,7 @@ app.get("/health", (req, res) => {
       return res.status(500).json({ status: "DOWN", error: err.message });
     }
     connection.release();
-    res.json({ status: "UP" });
+    res.json({ DB Status: "UP" });
   });
 });
 
