@@ -48,7 +48,7 @@ UPDATE=$("$SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh") || {
     echo "[ERROR] Failed to update MySQL bind-address. Exiting..."
     exit 1
 }
-echo "$UPDATE"
+echo "[RESPONSE] $UPDATE"
 
 # Move necessary scripts and service files
 sudo mkdir -p /usr/local/bin
@@ -61,7 +61,7 @@ DATABSE_CREATE=$("$SCRIPT_DIR/db/create-databse-and-user.sh") || {
     echo "[ERROR] Failed to create database and user. Exiting..."
     exit 1
 }
-echo "$DATABSE_CREATE"
+echo "[RESPONSE] $DATABSE_CREATE"
 # Create application directory
 sudo mkdir -p /opt/app
 
