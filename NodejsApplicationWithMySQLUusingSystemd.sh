@@ -48,7 +48,7 @@ UPDATE=$("$SCRIPT_DIR/script/UpdateMySQLSystemdIP.sh") || {
     echo "[ERROR] Failed to update MySQL bind-address. Exiting..."
     exit 1
 }
-echo "$UPDATE
+echo "$UPDATE"
 
 # Move necessary scripts and service files
 sudo mkdir -p /usr/local/bin
