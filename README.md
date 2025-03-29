@@ -1,6 +1,6 @@
 # MASTERING-AWS-DEVOPS
 
-#Script run instruction
+# Script run instruction
 
 # Clone the git report
 - git clone https://github.com/mchowlader/MASTERING-AWS-DEVOPS.git
