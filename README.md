@@ -24,3 +24,9 @@ sudo chmod +x NodejsApplicationWithMySQLUusingSystemd.sh
 ```bash
 sudo ./NodejsApplicationWithMySQLUusingSystemd.sh
 ```
+
+### 5. Test Nodejs 
+```bash
+http://<Your Server IP>:3000/health
+http://<Your Server IP>:3000/users
+```
