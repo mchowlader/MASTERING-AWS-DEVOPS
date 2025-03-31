@@ -13,11 +13,11 @@ git clone https://github.com/mchowlader/MASTERING-AWS-DEVOPS.git
 ```
 ### 2. Switch to the Assignment Branch
 ```bash
+cd MASTERING-AWS-DEVOPS
 git switch Assignment2-Deploying-a-Node.js-Application-with-MySQL-using-systemd
 ```
 ### 3. Make the Shell Script Executable
 ```bash
-cd MASTERING-AWS-DEVOPS
 sudo chmod +x NodejsApplicationWithMySQLUusingSystemd.sh
 ```
 ### 4. Execute the Shell Script
