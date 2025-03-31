@@ -84,11 +84,22 @@ else
     echo "[INFO] Node.js is already installed. Skipping installation."
 fi
 
+# Find npm path dynamically
+NPM_PATH=$(which npm)
+
+# Check if npm is installed
+if [ -z "$NPM_PATH" ]; then
+    echo "[ERROR] npm is not installed. Please install Node.js and npm first."
+    exit 1
+fi
+
+echo "[INFO] Using npm from: $NPM_PATH"
+
 # Check if npm packages are installed
 if [ ! -d "node_modules" ]; then
     echo "[INFO] Initializing npm project..."
-	sudo npm install --prefix /opt/app 
-    sudo -E npm install express mysql2 --prefix /opt/app
+    sudo "$NPM_PATH" install --prefix /opt/app 
+    sudo -E "$NPM_PATH" install express mysql2 --prefix /opt/app
 else
     echo "[INFO] npm packages already installed. Skipping installation."
 fi
