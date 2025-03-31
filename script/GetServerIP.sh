@@ -7,6 +7,6 @@ SERVER_IP=$(hostname -I | awk '{print $1}')
 if [[ -z "$SERVER_IP" ]]; then
     echo "Error: Unable to retrieve server IP." >&2
     exit 1
+else
+    echo "Server IP Address: $SERVER_IP"
 fi
-
-echo "$SERVER_IP"
