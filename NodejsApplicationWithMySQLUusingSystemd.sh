@@ -62,6 +62,8 @@ DATABSE_CREATE=$("$SCRIPT_DIR/db/create-databse-and-user.sh") || {
     exit 1
 }
 echo "[RESPONSE] $DATABSE_CREATE"
+
+sleep 5
 # Create application directory
 sudo mkdir -p /opt/app
 
