@@ -71,7 +71,7 @@ if ! id -u nodejs > /dev/null 2>&1; then
 fi
 sudo chown nodejs:nodejs /opt/app
 
-#cd /opt/app
+cd /opt/app
 
 # Check if Node.js is installed
 if ! command -v node &> /dev/null; then
