@@ -92,7 +92,7 @@ if [ -z "$NPM_PATH" ]; then
     echo "[ERROR] npm is not installed. Please install Node.js and npm first."
     #exit 1
 fi
-
+echo "$NPM_PATH"
 echo "[INFO] Using npm from: $NPM_PATH"
 
 # Check if npm packages are installed
