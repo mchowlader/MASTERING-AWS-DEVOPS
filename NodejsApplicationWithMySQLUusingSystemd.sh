@@ -84,9 +84,10 @@ else
     echo "[INFO] Node.js is already installed. Skipping installation."
 fi
 
+NPM_PATH=$(which npm)
 echo "npm installing start"
-npm init -y --prefix /opt/app
-npm install express mysql2 --prefix /opt/app
+sudo $NPM_PATH init -y --prefix /opt/app
+sudo $NPM_PATH install express mysql2 --prefix /opt/app
 echo "npm installing end"
 
 sudo chown -R nodejs:nodejs /opt/app
