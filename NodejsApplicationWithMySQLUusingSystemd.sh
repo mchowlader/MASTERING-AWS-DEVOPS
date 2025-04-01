@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Exit script on any error and catch errors in piped commands
-set -e
-set -o pipefail
+#set -e
+#set -o pipefail
 
 LOG_FILE="install.log"
 exec > >(tee -a "$LOG_FILE") 2>&1  # Log output to file
@@ -90,7 +90,7 @@ echo "$NPM_PATH"
 # Check if npm is installed
 if [ -z "$NPM_PATH" ]; then
     echo "[ERROR] npm is not installed. Please install Node.js and npm first."
-    exit 1
+    #exit 1
 fi
 
 echo "[INFO] Using npm from: $NPM_PATH"
