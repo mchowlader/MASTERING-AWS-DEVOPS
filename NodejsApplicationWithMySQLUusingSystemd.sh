@@ -86,7 +86,7 @@ fi
 
 
 NPM_PATH=$(command -v npm)
-
+echo "$NPM_PATH"
 if [ -z "$NPM_PATH" ]; then
     echo "[ERROR] npm is not installed or not in the PATH."
     exit 1
