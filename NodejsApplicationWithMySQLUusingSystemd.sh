@@ -85,14 +85,21 @@ else
 fi
 
 
-# Check if npm packages are installed
+NPM_PATH=$(command -v npm)
+
+if [ -z "$NPM_PATH" ]; then
+    echo "[ERROR] npm is not installed or not in the PATH."
+    exit 1
+fi
+
 if [ ! -d "node_modules" ]; then
     echo "[INFO] Initializing npm project..."
-	sudo npm install --prefix /opt/app 
-    sudo -E npm install express mysql2 --prefix /opt/app
+    sudo -E $NPM_PATH install --prefix /opt/app
+    sudo -E $NPM_PATH install express mysql2 --prefix /opt/app
 else
     echo "[INFO] npm packages already installed. Skipping installation."
 fi
+
 
 sudo chown -R nodejs:nodejs /opt/app
 
