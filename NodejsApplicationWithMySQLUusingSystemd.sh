@@ -86,7 +86,7 @@ fi
 
 # Find npm path dynamically
 NPM_PATH=$(which npm)
-
+echo "$NPM_PATH"
 # Check if npm is installed
 if [ -z "$NPM_PATH" ]; then
     echo "[ERROR] npm is not installed. Please install Node.js and npm first."
