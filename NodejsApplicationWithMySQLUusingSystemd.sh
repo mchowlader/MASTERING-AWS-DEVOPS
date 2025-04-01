@@ -80,7 +80,7 @@ else
     echo "[INFO] Node.js is already installed. Skipping installation."
 fi
 
-NPM_PATH=$(which npm)
+NPM_PATH=$(which npm) #This code does not work perfectly in Poridhi Lab, but it works perfectly in my Linux VM.
 echo "npm installing start"
 sudo $NPM_PATH init -y --prefix /opt/app
 sudo $NPM_PATH install express mysql2 --prefix /opt/app
