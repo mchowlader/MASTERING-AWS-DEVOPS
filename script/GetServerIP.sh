@@ -8,5 +8,5 @@ if [[ -z "$SERVER_IP" ]]; then
     echo "Error: Unable to retrieve server IP." >&2
     exit 1
 else
-    echo "Server IP Address: $SERVER_IP"
+    echo "$SERVER_IP"
 fi
