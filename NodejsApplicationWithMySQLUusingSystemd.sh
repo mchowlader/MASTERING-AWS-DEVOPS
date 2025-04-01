@@ -85,8 +85,8 @@ else
 fi
 
 echo "npm installing start"
-sudo npm init -y --prefix /opt/app
-sudo npm install express mysql2 --prefix /opt/app
+npm init -y --prefix /opt/app
+npm install express mysql2 --prefix /opt/app
 echo "npm installing end"
 
 sudo chown -R nodejs:nodejs /opt/app
