@@ -84,22 +84,10 @@ else
     echo "[INFO] Node.js is already installed. Skipping installation."
 fi
 
-
-NPM_PATH=$(command -v npm)
-echo "$NPM_PATH"
-if [ -z "$NPM_PATH" ]; then
-    echo "[ERROR] npm is not installed or not in the PATH."
-    exit 1
-fi
-
-if [ ! -d "node_modules" ]; then
-    echo "[INFO] Initializing npm project..."
-    sudo -E $NPM_PATH install --prefix /opt/app
-    sudo -E $NPM_PATH install express mysql2 --prefix /opt/app
-else
-    echo "[INFO] npm packages already installed. Skipping installation."
-fi
-
+echo "npm installing start"
+sudo npm init -y --prefix /opt/app
+sudo npm install express mysql2 --prefix /opt/app
+echo "npm installing end"
 
 sudo chown -R nodejs:nodejs /opt/app
 
