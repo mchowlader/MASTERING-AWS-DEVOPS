@@ -18,7 +18,7 @@ cd MASTERING-AWS-DEVOPS
 git switch Assignment-4
 ```
 
-### 2. use below command for configure pulumi
+### 3. use below command for configure pulumi
 ```bash
 mkdir Assignment4
 cd  Assignment4
@@ -34,7 +34,7 @@ chmod +x ./run_script
 
 ```
 
-### 2. Sample of pulumi stack
+### 4. Sample of pulumi stack
 ```bash
 pulumi stack output:
 Current stack outputs (10):
