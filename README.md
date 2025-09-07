@@ -51,13 +51,13 @@ Current stack outputs (10):
     vpc_id                  vpc-0d668ac859b160c3b
 ```
 
-## Step 1: VPC Mapping
+## Task 1 — Create a Secure VPC
 ![VPC Mapping](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/1_vpc_mapping.jpg)
 
-## Step 2: EC2 Image Instance
+## EC2 Image Instance
 ![EC2 Image Instance](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/2_EC2_Image_Instance.jpg)
 
-## Step 3: Public EC2 IP Details
+## Task 2 — Bastion Host in Public Subnet
 ![Public EC2 IP Details](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/3.1_Public_EC2_IP_Details.jpg)
 
 ## Step 4: Public EC2 Access and Internet Connectivity Check
