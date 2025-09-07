@@ -51,11 +51,15 @@ Current stack outputs (10):
     vpc_id                  vpc-0d668ac859b160c3b
 ```
 
-## Output of VPC Visualization
-![VPC Visualization](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/1_vpc_mapping.jpg)
+## Output of VPC Mapping
+![VPC Mapping](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/1_vpc_mapping.jpg)
 
-## Output of EC2_Image_Instance
-![VPC Visualization](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/2_EC2_Image_Instance.jpg)
+## Output of EC2 Image Instance
+![EC2 Image Instance](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/2_EC2_Image_Instance.jpg)
 
-## Output of Public_EC2_IP_Details
-![VPC Visualization](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/3.1_Public_EC2_IP_Details.jpg)
+## Output of Public EC2 IP Details
+![Public EC2 IP Details](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/3.1_Public_EC2_IP_Details.jpg)
+
+## Output of Public EC2 Access and Internet Connectivity Check
+![Public EC2 Access and Internet Connectivity Check](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/3_Public_EC2_Access_and_internet_connectivity_check.jpg)
+
