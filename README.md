@@ -52,4 +52,4 @@ Current stack outputs (10):
 ```
 
 ## Output of Manual Ping 
-![VPC Vizualization](Assignment%201/Manual%20ping%201_vpc_mapping.jpg)
+![VPC Visualization](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/1_vpc_mapping.jpg)
