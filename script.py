@@ -176,8 +176,8 @@ private_instance = aws.ec2.Instance("private-instance",
 
 pulumi.export("private_instance_id", private_instance.id)
 
-# aws ec2 describe-images \
-#     --owners 099720109477 \
-#     --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-jammy-24.04-amd64-server-*" \
-#     --query 'Images[*].[ImageId, Name]' \
-#     --region ap-southeast-1
+aws ec2 describe-images \
+    --owners 099720109477 \
+    --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-jammy-24.04-amd64-server-*" \
+    --query 'Images[*].[ImageId, Name]' \
+    --region ap-southeast-1
