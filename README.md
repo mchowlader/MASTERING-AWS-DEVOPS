@@ -51,5 +51,23 @@ Current stack outputs (10):
     vpc_id                  vpc-0d668ac859b160c3b
 ```
 
-## Output of Manual Ping 
-![VPC Vizualization](Assignment%201/Manual%20ping%20output.png)
+## Task 1 — Create a Secure VPC
+![VPC Mapping](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/1_vpc_mapping.jpg)
+
+## EC2 Image Instance
+![EC2 Image Instance](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/2_EC2_Image_Instance.jpg)
+
+## Task 2 — Bastion Host in Public Subnet
+![Public EC2 IP Details](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/3.1_Public_EC2_IP_Details.jpg)
+
+## Public EC2 Access and Internet Connectivity Check
+![Public EC2 Access and Internet Connectivity Check](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/3_Public_EC2_Access_and_internet_connectivity_check.jpg)
+
+## Task 3 — Private EC2 Instance
+![Public EC2 Access and Internet Connectivity Check](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/4.1_Private_EC2_IP_Details.jpg)
+
+## Private EC2 Access and Internet Connectivity Check using NAT
+![Public EC2 Access and Internet Connectivity Check](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/4_Private_EC2_Instance_Access_Bastion_and_Internet_connectivity_checkjpg.jpg)
+
+
+
