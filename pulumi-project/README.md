@@ -1,92 +1,73 @@
- # AWS Python S3 Bucket Pulumi Template
+# MASTERING-AWS-DEVOPS
 
- A minimal Pulumi template for provisioning a single AWS S3 bucket using Python.
 
- ## Overview
+## Script Run Instructions
 
- This template provisions an S3 bucket (`pulumi_aws.s3.BucketV2`) in your AWS account and exports its ID as an output. It’s an ideal starting point when:
-  - You want to learn Pulumi with AWS in Python.
-  - You need a barebones S3 bucket deployment to build upon.
-  - You prefer a minimal template without extra dependencies.
+Follow the steps below to set up the project and deploy the Node.js application with MySQL using `systemd`.
 
- ## Prerequisites
+### 1. Clone the Git Repository
 
- - An AWS account with permissions to create S3 buckets.
- - AWS credentials configured in your environment (for example via AWS CLI or environment variables).
- - Python 3.6 or later installed.
- - Pulumi CLI already installed and logged in.
+Clone the repository to your machine:
 
- ## Getting Started
+```bash
+git clone https://github.com/mchowlader/MASTERING-AWS-DEVOPS.git
+```
+### 2. Switch to the Assignment Branch
+```bash
+cd MASTERING-AWS-DEVOPS
+git switch Assignment-4
+```
 
- 1. Generate a new project from this template:
-    ```bash
-    pulumi new aws-python
-    ```
- 2. Follow the prompts to set your project name and AWS region (default: `us-east-1`).
- 3. Change into your project directory:
-    ```bash
-    cd <project-name>
-    ```
- 4. Preview the planned changes:
-    ```bash
-    pulumi preview
-    ```
- 5. Deploy the stack:
-    ```bash
-    pulumi up
-    ```
- 6. Tear down when finished:
-    ```bash
-    pulumi destroy
-    ```
+### 3. use below command for configure pulumi
+```bash
+mkdir Assignment4
+cd  Assignment4
 
- ## Project Layout
+sudo apt update
+sudo apt install python310-venv
 
- After running `pulumi new`, your directory will look like:
- ```
- ├── __main__.py         # Entry point of the Pulumi program
- ├── Pulumi.yaml         # Project metadata and template configuration
- ├── requirements.txt    # Python dependencies
- └── Pulumi.<stack>.yaml # Stack-specific configuration (e.g., Pulumi.dev.yaml)
- ```
+pulumi new aws-python
 
- ## Configuration
+aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
 
- This template defines the following config value:
+chmod +x ./run_script
 
- - `aws:region` (string)
-   The AWS region to deploy resources into.
-   Default: `us-east-1`
+```
 
- View or update configuration with:
- ```bash
- pulumi config get aws:region
- pulumi config set aws:region us-west-2
- ```
+### 4. Sample of pulumi stack
+```bash
+pulumi stack output:
+Current stack outputs (10):
+    OUTPUT                  VALUE
+    igw_id                  igw-0097d8e96b3ba94bd
+    nat_gateway_id          nat-08c7d186bc3635de5
+    private_instance_id     i-08f35a256e3f1df14
+    private_route_table_id  rtb-0a8560b51d5e83182
+    private_subnet          subnet-0195f904ca413e485
+    public_instance_id      i-0ed6ab3802f4f4d10
+    public_instance_ip      47.129.189.239
+    public_route_table_id   rtb-043f66ddf97a7032d
+    public_subnet           subnet-054454a2090902917
+    vpc_id                  vpc-0d668ac859b160c3b
+```
 
- ## Outputs
+## Task 1 — Create a Secure VPC
+![VPC Mapping](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/1_vpc_mapping.jpg)
 
- Once deployed, the stack exports:
+## EC2 Image Instance
+![EC2 Image Instance](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/2_EC2_Image_Instance.jpg)
 
- - `bucket_name` — the ID of the created S3 bucket.
+## Task 2 — Bastion Host in Public Subnet
+![Public EC2 IP Details](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/3.1_Public_EC2_IP_Details.jpg)
 
- Retrieve outputs with:
- ```bash
- pulumi stack output bucket_name
- ```
+## Public EC2 Access and Internet Connectivity Check
+![Public EC2 Access and Internet Connectivity Check](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/3_Public_EC2_Access_and_internet_connectivity_check.jpg)
 
- ## Next Steps
+## Task 3 — Private EC2 Instance
+![Public EC2 Access and Internet Connectivity Check](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/4.1_Private_EC2_IP_Details.jpg)
 
- - Customize `__main__.py` to add or configure additional resources.
- - Explore the Pulumi AWS SDK: https://www.pulumi.com/registry/packages/aws/
- - Break your infrastructure into modules for better organization.
- - Integrate into CI/CD pipelines for automated deployments.
+## Private EC2 Access and Internet Connectivity Check using NAT
+![Public EC2 Access and Internet Connectivity Check](https://raw.githubusercontent.com/mchowlader/MASTERING-AWS-DEVOPS/Assignment-4/4_Private_EC2_Instance_Access_Bastion_and_Internet_connectivity_checkjpg.jpg)
 
- ## Help and Community
 
- If you have questions or need assistance:
- - Pulumi Documentation: https://www.pulumi.com/docs/
- - Community Slack: https://slack.pulumi.com/
- - GitHub Issues: https://github.com/pulumi/pulumi/issues
 
- Contributions and feedback are always welcome!
